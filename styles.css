@@ -134,6 +134,53 @@ a {
   color: var(--black);
 }
 
+.walletMount {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-left: 2px solid var(--line);
+}
+
+.rainbowWallet,
+.rainbowWalletWarn,
+.rainbowAccount,
+.rainbowChain {
+  min-height: 44px;
+  border: 1px solid var(--cyan);
+  background: var(--black);
+  color: var(--cream);
+  padding: 0 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: inset 0 0 18px rgba(49, 216, 212, 0.2), 0 0 16px rgba(49, 216, 212, 0.2);
+}
+
+.rainbowWallet {
+  color: var(--cyan);
+}
+
+.rainbowWalletWarn {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
+.rainbowStack {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.rainbowChain {
+  color: var(--lime);
+  border-color: var(--lime);
+}
+
+.rainbowAccount {
+  color: var(--amber);
+  border-color: var(--amber);
+}
+
 .meterStrip {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -506,6 +553,23 @@ a {
   .rackTop nav a {
     min-width: 118px;
     min-height: 50px;
+  }
+
+  .walletMount {
+    border-left: 0;
+    border-top: 2px solid var(--line);
+    justify-content: stretch;
+  }
+
+  .walletMount > div,
+  .rainbowWallet,
+  .rainbowWalletWarn,
+  .rainbowStack {
+    width: 100%;
+  }
+
+  .rainbowStack {
+    flex-wrap: wrap;
   }
 
   .meterStrip {
