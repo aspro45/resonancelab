@@ -79,6 +79,7 @@ http://localhost:8080/
 ## Public Release
 
 - Repository: <https://github.com/aspro45/resonancelab>
+- Live app: <https://resonancelab-navy.vercel.app>
 - Runtime: static HTML/CSS/JavaScript
 - Deployment metadata: `deployment.json`
 
