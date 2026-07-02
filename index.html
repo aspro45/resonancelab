@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ResonanceLab</title>
+    <meta name="description" content="ResonanceLab - GenLayer signal verification for audio sessions and public acoustic evidence." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="scopeCanvas" aria-hidden="true"></canvas>
+
+    <main class="console">
+      <header class="rackTop">
+        <a class="brand" href="#scope">
+          <span class="brandDisc">RL</span>
+          <span>
+            <strong>ResonanceLab</strong>
+            <small>public signal verification</small>
+          </span>
+        </a>
+        <nav aria-label="console">
+          <a href="#sessions">Sessions</a>
+          <a href="#scope">Scope</a>
+          <a id="contractLink" href="#" target="_blank" rel="noreferrer">Contract pending</a>
+        </nav>
+      </header>
+
+      <section class="meterStrip" aria-label="live meters">
+        <div><span>chain</span><b>studionet</b></div>
+        <div><span>capsule</span><b>39</b></div>
+        <div><span>proof buses</span><b>12</b></div>
+        <div><span>noise gate</span><b>-18db</b></div>
+        <div><span>vault</span><b>local</b></div>
+      </section>
+
+      <section class="labGrid">
+        <aside id="sessions" class="sessionBay">
+          <div class="bayHead">
+            <span>session reels</span>
+            <button id="nextBtn" type="button">Tune</button>
+          </div>
+          <div id="sessionList" class="sessionList"></div>
+        </aside>
+
+        <section id="scope" class="scopePanel">
+          <div class="scopeHeader">
+            <span id="sessionCode">RL-000</span>
+            <strong id="sessionTitle">Session</strong>
+            <span id="sessionStatus">CAPTURED</span>
+          </div>
+          <div class="oscilloscope">
+            <canvas id="waveCanvas" aria-label="signal waveform"></canvas>
+            <div class="crosshair" aria-hidden="true"></div>
+          </div>
+          <div id="proofRack" class="proofRack"></div>
+        </section>
+
+        <aside class="patchPanel">
+          <div class="patchTitle">patch matrix</div>
+          <div id="knobBank" class="knobBank"></div>
+          <div id="ledgerTape" class="ledgerTape"></div>
+        </aside>
+      </section>
+
+      <section class="transport">
+        <form id="captureForm" class="captureForm">
+          <label>
+            Session title
+            <input id="captureTitle" value="Warehouse dawn recording" />
+          </label>
+          <label>
+            Signal claim
+            <input id="captureClaim" value="Field recorder matched venue source and calibration notes" />
+          </label>
+          <button type="submit">Capture local reel</button>
+        </form>
+        <div class="methodKeys">
+          <span>register_session</span>
+          <span>add_signal_proof</span>
+          <span>add_calibration</span>
+          <span>analyze_session_with_genlayer</span>
+          <span>file_dispute</span>
+          <span>press_record</span>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
